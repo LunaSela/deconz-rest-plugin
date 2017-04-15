@@ -121,9 +121,11 @@ SOURCES  = authentification.cpp \
            json.cpp \
            light_node.cpp \
            sqlite3.c \
+           rest_capabilities.cpp \
            rest_configuration.cpp \
            rest_gateways.cpp \
            rest_groups.cpp \
+           rest_info.cpp \
            rest_lights.cpp \
            rest_node_base.cpp \
            rest_rules.cpp \

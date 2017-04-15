@@ -7978,6 +7978,8 @@ bool DeRestPlugin::isHttpTarget(const QHttpRequestHeader &hdr)
                 (ls[2] == QLatin1String("rules")) ||
                 (ls[2] == QLatin1String("userparameter")) ||
                 (ls[2] == QLatin1String("gateways")) ||
+                (ls[2] == QLatin1String("info")) ||
+                (ls[2] == QLatin1String("capabilities")) ||
                 (hdr.path().at(4) != '/') /* Bug in some clients */)
             {
                 return true;
@@ -8154,6 +8156,14 @@ int DeRestPlugin::handleHttpRequest(const QHttpRequestHeader &hdr, QTcpSocket *s
         else if (path[2] == QLatin1String("gateways"))
         {
             ret = d->handleGatewaysApi(req, rsp);
+        }
+        else if (path[2] == QLatin1String("info"))
+        {
+            ret = d->handleInfoApi(req,rsp);
+        }
+        else if (path[2] == QLatin1String("capabilities"))
+        {
+            ret = d->handleCapabilitiesApi(req,rsp);
         }
     }
 

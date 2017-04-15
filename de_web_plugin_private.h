@@ -642,6 +642,15 @@ public:
     bool checkActions(QVariantList actionsList, ApiResponse &rsp);
     bool checkConditions(QVariantList conditionsList, ApiResponse &rsp);
 
+    // REST API info
+    int handleInfoApi(const ApiRequest &req, ApiResponse &rsp);
+    int getTimezones(const ApiRequest &req, ApiResponse &rsp);
+    QVariantList getTimezoneMap();
+
+    // REST API capabilities
+    int handleCapabilitiesApi(const ApiRequest &req, ApiResponse &rsp);
+    int getCapabilities(const ApiRequest &req, ApiResponse &rsp);
+
     // REST API common
     QVariantMap errorToMap(int id, const QString &ressource, const QString &description);
 
